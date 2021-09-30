@@ -19,9 +19,21 @@ public class ChatBot {
         System.out.format("Your age is %d; that's a good time to start programming!\n",age);
         System.out.println("Now I can prove to you that I can count to any number you want.");
         int user_number = scanner.nextInt();
-        for (int i=0;i<user_number+1;i++){
-            System.out.format("%d !\n",i);
+        for (int i=0;i<user_number+1;i++) {
+            System.out.format("%d !\n", i);
+        }
+        System.out.println("Для какого типа данных предназначен форматирование %d");
+        System.out.println("1.Любая строка");
+        System.out.println("2.Символ (char)");
+        System.out.println("3.Число с плавающей точкой");
+        System.out.println("4.Целое число (int,byte long)");
+        int user_answer = scanner.nextInt();
+        while (user_answer != 4){
+            System.out.println("Please try again!");
+            user_answer = scanner.nextInt();
+        }
+        System.out.println("Great,you right");
+        System.out.println("Goodbye,have a nice day!");
         }
 
     }
-}
