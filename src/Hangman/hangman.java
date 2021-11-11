@@ -1,9 +1,6 @@
 package Hangman;
 
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class hangman {
     public static void main(String[] args) {
@@ -16,7 +13,12 @@ public class hangman {
         words.add("kotlin");
         String correct_word = words.get(random.nextInt(words.size()));
         System.out.println("HANGMAN");
-        System.out.print("Guess the word: ");
+        String[] syms = correct_word.split("");
+        for (int i = 2;i<syms.length;i++){
+            syms[i] = "-";
+        }
+        String hint_word = String.join("",syms);
+        System.out.format("Guess the word %s: ",hint_word);
         String user_lang = scanner.nextLine();
         if (!Objects.equals(user_lang, correct_word)){
             System.out.println("You lost!");
